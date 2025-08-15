@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arjun — Portfolio</title>
+  <meta name="description" content="Interactive modern portfolio" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Arjun</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <button id="menu-toggle" aria-label="Open menu" class="hamburger">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Hello, I'm</p>
+          <h1>Arjun <span class="accent">— Developer & Designer</span></h1>
+          <p class="lead">I build beautiful, performant web experiences. I design UIs and implement them with clean, maintainable code.</p>
+
+          <div class="hero-cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn outline" href="#contact">Hire Me</a>
+          </div>
+
+          <p class="meta">Currently: <span id="typed"></span></p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <!-- Decorative SVG / interactive card -->
+          <div class="device-card" id="device-card">
+            <div class="device-screen">
+              <svg viewBox="0 0 200 120" class="wave" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1">
+                    <stop offset="0" stop-color="#7f5af0" />
+                    <stop offset="1" stop-color="#2dd4bf" />
+                  </linearGradient>
+                </defs>
+                <rect width="200" height="120" fill="url(#g1)"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container about" id="about">
+      <h2>About</h2>
+      <div class="about-grid">
+        <div>
+          <p>I'm a front-end developer with a focus on interactive design, performance and accessibility. I enjoy turning product ideas into polished experiences.</p>
+          <ul class="facts">
+            <li><strong>Location:</strong> Remote</li>
+            <li><strong>Availability:</strong> Open for freelance</li>
+            <li><strong>Email:</strong> <a href="mailto:hello@example.com">hello@example.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Quick Resume</h3>
+          <ol>
+            <li>Senior Frontend Engineer — Example Co</li>
+            <li>UI Engineer — StartUp Inc</li>
+            <li>Open-source contributor and mentor</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="container projects" id="projects">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <div class="filters" role="tablist" aria-label="Project filters">
+          <button class="filter active" data-filter="*">All</button>
+          <button class="filter" data-filter="web">Web</button>
+          <button class="filter" data-filter="ui">UI</button>
+          <button class="filter" data-filter="open">Open Source</button>
+        </div>
+      </div>
+
+      <div class="grid" id="projects-grid">
+        <!-- Project cards -->
+        <article class="card" data-tags="web ui">
+          <div class="card-media" style="background:linear-gradient(135deg,#7f5af0,#2dd4bf);background-image:url('img/portfolio-preview.jpg');background-size:cover;"></div>
+          <div class="card-body">
+            <h3>Portfolio Site</h3>
+            <p>Modern responsive site with animations and a CMS-free workflow.</p>
+            <div class="card-actions">
+              <button class="view-btn" data-slug="portfolio">Preview</button>
+              <a class="link" href="#" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="web open">
+          <div class="card-media" style="background:linear-gradient(135deg,#ff7ab6,#ffb86b);background-image:url('img/ui-library-preview.jpg');background-size:cover;"></div>
+          <div class="card-body">
+            <h3>UI Library</h3>
+            <p>Accessible component library built for design systems.</p>
+            <div class="card-actions">
+              <button class="view-btn" data-slug="uilib">Preview</button>
+              <a class="link" href="#" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="ui">
+          <div class="card-media" style="background:linear-gradient(135deg,#00c2ff,#0070f3);background-image:url('img/design-preview.jpg');background-size:cover;"></div>
+          <div class="card-body">
+            <h3>Design Case Study</h3>
+            <p>End-to-end product design with prototypes and usability testing.</p>
+            <div class="card-actions">
+              <button class="view-btn" data-slug="design">Preview</button>
+              <a class="link" href="#" target="_blank" rel="noopener">Read</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="web">
+          <div class="card-media" style="background:linear-gradient(135deg,#2dd4bf,#7f5af0);background-image:url('img/blog-preview.jpg');background-size:cover;"></div>
+          <div class="card-body">
+            <h3>Personal Blog</h3>
+            <p>Minimal blog platform with markdown support and custom themes.</p>
+            <div class="card-actions">
+              <button class="view-btn" data-slug="blog">Preview</button>
+              <a class="link" href="#" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="open">
+          <div class="card-media" style="background:linear-gradient(135deg,#ffb86b,#ff7ab6);background-image:url('img/contrib-preview.jpg');background-size:cover;"></div>
+          <div class="card-body">
+            <h3>Open Source Contributions</h3>
+            <p>Highlighted PRs and issues in popular OSS projects.</p>
+            <div class="card-actions">
+              <button class="view-btn" data-slug="contrib">Preview</button>
+              <a class="link" href="#" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Modal for project preview -->
+    <div id="project-modal" class="modal" aria-hidden="true">
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" aria-label="Close">✕</button>
+        <h3 id="modal-title">Project</h3>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
+    <section class="container skills" id="skills">
+      <h2>Skills</h2>
+      <div class="skill-list">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>TypeScript</span><span>Accessibility</span>
+      </div>
+    </section>
+
+    <section class="container contact" id="contact">
+      <h2>Contact</h2>
+      <p>Want to work together? Send a message — I'll reply within a few days.</p>
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <label>
+            <span>Name</span>
+            <input name="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" required />
+          </label>
+          <label class="full">
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send Message</button>
+          <div id="form-status" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Arjun — Built with care.</p>
+      <div class="social">
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
